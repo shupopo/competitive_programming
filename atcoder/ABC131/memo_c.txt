@@ -1,0 +1,64 @@
+import math
+
+A, B, C, D = map(int, input().split())
+count = 0
+gcd = math.gcd(C, D)
+remainder_c = C / gcd
+remainder_d = D / gcd
+lcm = remainder_c * remainder_d * gcd
+candidates = []
+for num in range(A, B + 1):
+    if num % lcm == 0:
+        continue
+    candidates.append(num)
+
+for num in candidates:
+    if num % gcd == 0:
+
+
+print(count)
+
+
+import math
+
+A, B, C, D = map(int, input().split())
+count = 0
+gcd = math.gcd(C, D)
+remainder_c = int(C / gcd)
+remainder_d = int(D / gcd)
+
+
+for num in range(A, B + 1):
+    if num % gcd == 0:
+        num = int(num / gcd)
+    # if math.gcd(remainder_c, num) == 1 and math.gcd(remainder_d, num) == 1:
+    if num % remainder_c != 0 and num % remainder_d != 0:
+        count += 1
+
+
+print(count)
+
+
+
+
+
+import math
+
+A, B, C, D = map(int, input().split())
+count = 0
+gcd = math.gcd(C, D)
+remainder_c = C / gcd
+remainder_d = D / gcd
+
+
+
+for num in range(A, B + 1):
+    print(num)
+    if num % gcd == 0:
+        num = int(num / gcd)
+        if num % remainder_c != 0 and num % remainder_d != 0:
+            count += 1
+    else:
+        if num % C != 0 and num % D != 0:
+            count += 1
+print(count)
